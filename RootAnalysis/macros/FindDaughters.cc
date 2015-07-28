@@ -1,7 +1,7 @@
 #include <string>
 
-#include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TAna01Event.hh"
-#include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TGenCand.hh"
+#include "../rootio/TAna01Event.hh"
+#include "../rootio/TGenCand.hh"
 
 #include "FindDaughters.hh"
 #include "Lb2JpsiL0_utils.h"

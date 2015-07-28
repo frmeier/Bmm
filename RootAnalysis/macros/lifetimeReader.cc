@@ -1,6 +1,6 @@
 #define noTAUCALCULATION_PATCH
 #include "lifetimeReader.hh"
-#include "../../Bs2MuMu/interface/HFMasses.hh"
+#include "../common/HFMasses.hh"
 
 #include "TRandom3.h"
 #include <cmath>

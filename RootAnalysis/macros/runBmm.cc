@@ -15,6 +15,7 @@
 
 #include "bmmReader.hh"
 #include "genAnalysis.hh"
+#include "lambdaReader.hh"
 
 #include "common/util.hh"
 
@@ -196,6 +197,9 @@ int main(int argc, char *argv[]) {
   } else if ("genAnalysis" == readerName) {
     cout << "instantiating genAnalysis" << endl;
     a = new genAnalysis(chain, TString(evtClassName));
+  } else if ("lambdaReader" == readerName) {
+    cout << "instantiating lambdaReader" << endl;
+    a = new lambdaReader(chain, TString(evtClassName));
   }
   
   

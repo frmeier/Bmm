@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TAna01Event.hh"
-#include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TGenCand.hh"
+#include "../rootio/TAna01Event.hh"
+#include "../rootio/TGenCand.hh"
 
 //==========================================================================
 class FindDaughters

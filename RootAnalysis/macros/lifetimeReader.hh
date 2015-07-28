@@ -19,6 +19,7 @@
 #include <TTree.h>
 #include <TRandom3.h>
 
+/*
 #include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TAna01Event.hh"
 #include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TGenCand.hh"
 #include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TAnaCand.hh"
@@ -27,6 +28,9 @@
 #include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/TAnaVertex.hh"
 
 #include "../../../AnalysisDataFormats/HeavyFlavorObjects/rootio/PidTable.hh"
+*/
+
+#include "candAna.hh"
 
 #include "treeReader01.hh"
 #include "DecayMap.hh"
@@ -70,7 +74,7 @@ public:
     virtual bool doCandStuff(const CheckedCand &clc);
     virtual bool doCandFitStuff(const CheckedCand &clc);
     virtual void doGenLevelStuff() = 0;
-    virtual bool doTruthMatching(const TAnaTrack *Mu1, const TAnaTrack *Mu2, const TAnaTrack *Ha1, const TAnaTrack *Ha2 = 0, const TVector3 &vtx = TVector3::TVector3(-99, -99, -99)) = 0;
+    virtual bool doTruthMatching(const TAnaTrack *Mu1, const TAnaTrack *Mu2, const TAnaTrack *Ha1, const TAnaTrack *Ha2, const TVector3 &vtx) = 0;
     virtual bool checkCuts() = 0;
 
     void doHLTstuff();

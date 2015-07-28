@@ -38,9 +38,10 @@ EXTHEADERS    = -I..
 
 # -- Files
 CSTUFF = preselection.o 
-READER = treeReader01.o bmmReader.o genAnalysis.o \
+READER = treeReader01.o bmmReader.o genAnalysis.o lifetimeReader.o lambdaReader.o \
          candAna.o candAnaMuMu.o candAnaBu2JpsiK.o candAnaBs2JpsiPhi.o candAnaDstar.o candAnaHh.o candAnaBd2DstarPi.o \
          plotClass.o plotWork.o
+SUPPORTCLASSES = Lb2JpsiL0_utils.o DecayMap.o FindDaughters.o
 DICT = ${READER:.o=Dict.o}
 DICTHEADERS = ${READER:.o=Dict.h}
 DICTSOURCES = ${READER:.o=Dict.cc}
@@ -77,8 +78,8 @@ $(addprefix lib/,%.pcm) :
 # -- Targets
 all: vars prep lib bin
 
-lib: $(addprefix obj/,$(CSTUFF) $(READER)  $(DICT))
-	$(CXX) $(SOFLAGS) $(addprefix obj/,$(CSTUFF) $(READER) $(DICT)) -o lib/libAnaClasses.so $(GLIBS) -lMinuit lib/libAna00.so lib/libUtil.so
+lib: $(addprefix obj/,$(CSTUFF) $(READER) $(SUPPORTCLASSES) $(DICT))
+	$(CXX) $(SOFLAGS) $(addprefix obj/,$(CSTUFF) $(READER) $(DICT) $(SUPPORTCLASSES)) -o lib/libAnaClasses.so $(GLIBS) -lMinuit lib/libAna00.so lib/libUtil.so
 
 
 bin: lib obj/runBmm.o
