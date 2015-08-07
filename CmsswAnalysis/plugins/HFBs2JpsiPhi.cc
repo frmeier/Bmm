@@ -90,9 +90,8 @@ void HFBs2JpsiPhi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
       unsigned int iKaon2 = phiIt->second;
 			
       if (iKaon1 == iMuon1 || iKaon1 == iMuon2) continue;
-      if (iKaon1 == iMuon1 || iKaon1 == iMuon2) continue;
-			
       if (iKaon2 == iMuon1 || iKaon2 == iMuon2) continue;
+
       reco::TrackBaseRef rTrackView1(fTracksHandle, iKaon1);
       reco::Track tKaon1(*rTrackView1);
       if (tKaon1.pt() < fTrackPt) continue;
@@ -151,7 +150,7 @@ void HFBs2JpsiPhi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
       iterator->addTrack(iMuon2,13,true);
       iterator->setNodeCut(RefCountedHFNodeCut(new HFMaxDocaCut(fMaxDoca)));
 			
-      iterator = theTree.addDecayTree(400333, false, MPHI, false);
+      iterator = theTree.addDecayTree(500333, false, MPHI, false);
       iterator->addTrack(iKaon1,321,false);
       iterator->addTrack(iKaon2,321,false);
       iterator->setNodeCut(RefCountedHFNodeCut(new HFMaxDocaCut(fMaxDoca)));
