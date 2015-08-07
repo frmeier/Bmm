@@ -14,6 +14,7 @@ class HFLb2JpsiL0 : public HFVirtualDecay {
 		
 		int           fPsiMuons;
 		double        fPsiWindow, fL0Window, fLbWindow;
+        double        fpAngle, fmaxVtxChi2;
 };
 
 #endif

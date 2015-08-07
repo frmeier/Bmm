@@ -18,7 +18,9 @@ HFLb2JpsiL0::HFLb2JpsiL0(const edm::ParameterSet& iConfig) :
   fPsiMuons(iConfig.getUntrackedParameter<int>("psiMuons", 2)),
   fPsiWindow(iConfig.getUntrackedParameter<double>("psiWindow", 0.3)),
   fL0Window(iConfig.getUntrackedParameter<double>("L0Window", 0.2)),
-  fLbWindow(iConfig.getUntrackedParameter<double>("LbWindow", 0.8)) {
+  fLbWindow(iConfig.getUntrackedParameter<double>("LbWindow", 0.8)),
+  fpAngle(iConfig.getUntrackedParameter<double>("pAngle", 0.1)),
+  fmaxVtxChi2(iConfig.getUntrackedParameter<double>("maxVtxChi2", 3.85)) {
   dumpConfiguration();
 } // HFLb2JpsiL0()
 
@@ -30,8 +32,10 @@ void HFLb2JpsiL0::dumpConfiguration() {
   HFVirtualDecay::dumpConfiguration();
   cout << "---  psiMuons:                 " << fPsiMuons << endl;
   cout << "---  psiWindow:                " << fPsiWindow << endl;
-  cout << "---  L0Window:                " << fL0Window << endl;
+  cout << "---  L0Window:                 " << fL0Window << endl;
   cout << "---  LbWindow:                 " << fLbWindow << endl;
+  cout << "---  pAngle:                   " << fpAngle << endl;
+  cout << "---  maxVtxChi2:               " << fmaxVtxChi2 << endl;
   cout << "----------------------------------------------------------------------" << endl;
 } // dumpConfiguration()
 
